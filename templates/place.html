@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block head %} <title>Place Order</title>
+<link rel="stylesheet" href="static/css/place.css" />
+{% endblock %} {% block body %}
+<form method="POST" id="place">
+  <input type="text" name="crop" id="crop" value="" hidden />
+</form>
+<div class="nav">
+  <h1 class="nav-title">Farmers Connect</h1>
+</div>
+<div class="content">
+  <h1 class="title">Place Order</h1>
+  <ul class="details">
+    <li>Name: {{trucker.username}}</li>
+    <li>Place: {{trucker.place}}</li>
+    <li>Contact: {{trucker.phone}}</li>
+    <li>Truck Model: {{trucker.model}}</li>
+  </ul>
+  <div>
+    Choose a crop
+    <select name="crop-sl" id="crop-sl" value="Select">
+      {% for i in range(crops|length) %}
+      <option value="{{crops[i]}}">{{crops[i]}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button class="button" id="place-btn">Place Order</button>
+</div>
+<script>
+  document.getElementById("place-btn").addEventListener("click", () => {
+    document.getElementById("crop").value =
+      document.getElementById("crop-sl").value;
+    document.getElementById("place").submit();
+  });
+</script>
+{% endblock %}

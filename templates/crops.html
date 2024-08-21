@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block head %} <title>Crops</title>
+<link rel="stylesheet" href="static/css/crops.css" />
+{% endblock %} {% block body %}
+<form method="POST" id="add_form">
+  <input type="text" name="uid" id="uid" value="{{user.uid}}" hidden />
+  <input type="text" name="crop" id="crop" hidden />
+</form>
+<div class="nav">
+  <h1 class="nav-title">Farmers Connect</h1>
+</div>
+<div class="content">
+  <h1 class="title">My Crops</h1>
+  <button class="button" id="add">Add Crop</button>
+  <table class="crops">
+    <tr class="title-tr">
+      <th class="first">S.no</th>
+      <th class="second">Name</th>
+      <th class="third">Actions</th>
+    </tr>
+    {% for i in range(crops|length)%}
+    <tr>
+      <td class="first">{{i+1}}</td>
+      <td class="second">{{crops[i]}}</td>
+      <td class="third"><a class="delete" href="/delete-{{i}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<script>
+  document.getElementById("add").addEventListener("click", () => {
+    const form = document.getElementById("add_form");
+    const crop = prompt("Enter crop name");
+    if (crop != null) {
+      document.getElementById("crop").value = crop;
+      form.submit();
+    }
+  });
+</script>
+{% endblock %}

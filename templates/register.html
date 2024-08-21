@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block head %} <title>Register</title>
+<link rel="stylesheet" href="static/css/register.css" />
+{% endblock %} {% block body %}
+<form method="POST" id="login_form">
+  <h1>Register</h1>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    placeholder="Username"
+    class="input input-text"
+  /><input
+    type="password"
+    name="password"
+    id="password"
+    placeholder="Password"
+    class="input input-text"
+  />
+  <div class="type">
+    <h3>I am a:</h3>
+    <div>
+      <label for="type">Farmer</label>
+      <input type="radio" name="type" id="farmer" value="farmer" />
+      <label for="type">Trucker</label>
+      <input type="radio" name="type" id="trucker" value="trucker" />
+    </div>
+  </div>
+  <input
+    placeholder="Phone number"
+    type="number"
+    name="phone"
+    id="phone"
+    class="input input-text"
+  />
+  <input
+    type="text"
+    name="place"
+    id="place"
+    placeholder="place"
+    class="input input-text"
+  /><input
+    type="text"
+    name="model"
+    id="model"
+    placeholder="Model (For Truckers)"
+    class="input input-text"
+  />
+  <input type="submit" value="Create" id="submit" class="input input-button" />
+</form>
+{% endblock %}

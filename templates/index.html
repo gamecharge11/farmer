@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block head %} <title>Index</title>
+<link rel="stylesheet" href="static/css/style.css" />
+{% endblock %} {% block body %}
+<div class="nav">
+  <h1 class="nav-title">Farmers Connect</h1>
+</div>
+<div class="content">
+  <div class="buttons">
+    {% if user.type == "farmer" %}
+    <button class="button" id="crops" onclick="location.href='crops'">
+      Crops
+    </button>
+    {% endif %}<button
+      class="button"
+      id="truckers"
+      onclick="location.href='truckers'"
+    >
+      Truckers</button
+    ><button class="button" id="order" onclick="location.href='orders'">
+      My Orders
+    </button>
+  </div>
+</div>
+
+{% endblock %}

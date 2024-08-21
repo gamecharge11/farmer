@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block head %} <title>Register</title>
+<link rel="stylesheet" href="static/css/register.css" />
+{% endblock %} {% block body %}
+<form method="POST" id="login_form">
+  <h1>Login</h1>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    placeholder="Username"
+    class="input input-text"
+  /><input
+    type="password"
+    name="password"
+    id="password"
+    placeholder="Password"
+    class="input input-text"
+  />
+  <input type="submit" value="Login" id="submit" class="input input-button" />
+</form>
+{% endblock %}
