@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: beige;
+}
+
+.nav {
+  width: 100vw;
+  height: 10vh;
+  background-color: rgba(255, 230, 104, 0.833);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.content {
+  width: 100vw;
+  height: 80vh;
+  position: absolute;
+  top: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  width: 100vw;
+  height: 160px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons .button {
+  border: none;
+  font-size: 1.8rem;
+  width: 20vw;
+  cursor: pointer;
+  background-color: rgb(255, 255, 127);
+  border-radius: 30px;
+}
